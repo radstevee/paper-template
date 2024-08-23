@@ -3,6 +3,7 @@ plugins {
     id("io.papermc.paperweight.userdev") version "1.7.1"
     id("xyz.jpenilla.run-paper") version "2.3.1"
     id("com.gradleup.shadow") version "8.3.0"
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 group = "net.radstevee"
@@ -20,6 +21,7 @@ dependencies {
     implementation("org.incendo:cloud-kotlin-extensions:2.0.0-SNAPSHOT")
     implementation("org.incendo:cloud-kotlin-coroutines:2.0.0-SNAPSHOT")
     implementation("org.apache.commons:commons-lang3:3.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
 
     paperweight.paperDevBundle("1.21.1-R0.1-SNAPSHOT")
 }
