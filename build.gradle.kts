@@ -44,3 +44,13 @@ tasks.assemble {
     dependsOn(tasks.shadowJar)
     dependsOn(tasks.processResources)
 }
+
+tasks.withType<xyz.jpenilla.runtask.task.AbstractRun> {
+    javaLauncher =
+        javaToolchains.launcherFor {
+            vendor = JvmVendorSpec.JETBRAINS
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    jvmArgs("-XX:+AllowEnhancedClassRedefinition", "-XX:+AllowRedefinitionToAddDeleteMethods")
+}
+
